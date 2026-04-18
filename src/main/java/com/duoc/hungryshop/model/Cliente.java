@@ -19,7 +19,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id; //Es id porque asi se genera automaticamente, si fuera RUT tendria que añadirse manualmente
+    private Long id; //Es id porque asi se genera automaticamente, si fuera RUT tendria que añadirse manualmente
 
     @NotBlank
     private String nombre;
