@@ -1,15 +1,16 @@
 package com.duoc.hungryshop.model;
 
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -36,4 +37,7 @@ public class Cliente {
     @NotBlank
     private String celular; //Esta como String porque lleva un "+"" al principio, ademas que no se ocupara para sumar
 
+    //Relaciones: 
+    @OneToMany
+    private List<Pedido> pedidos;
 }
