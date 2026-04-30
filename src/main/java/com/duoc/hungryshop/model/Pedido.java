@@ -1,6 +1,7 @@
 package com.duoc.hungryshop.model;
 
 import java.util.List;
+import java.time.LocalDateTime;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +30,8 @@ public class Pedido {
 
     @ManyToMany
     private List<Producto> productos;
+
+    private LocalDateTime fecha;
     private Double total;
     private String estado; // Pendiente/Entregado
 

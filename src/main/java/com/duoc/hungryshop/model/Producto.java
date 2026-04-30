@@ -21,7 +21,7 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // ID
-    private long id;
+    private Long id;
 
     @NotBlank
     private String nombre;

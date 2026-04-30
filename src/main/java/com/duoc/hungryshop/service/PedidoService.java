@@ -1,4 +1,4 @@
-package service;
+package com.duoc.hungryshop.service;
 
 import com.duoc.hungryshop.model.Pedido;
 import com.duoc.hungryshop.repository.PedidoRepository;
