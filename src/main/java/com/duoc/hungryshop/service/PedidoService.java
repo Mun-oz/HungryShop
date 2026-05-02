@@ -1,5 +1,6 @@
 package com.duoc.hungryshop.service;
 
+import com.duoc.hungryshop.dto.PedidoResumenDTO;
 import com.duoc.hungryshop.model.Pedido;
 import com.duoc.hungryshop.repository.PedidoRepository;
 
@@ -35,5 +36,17 @@ public class PedidoService {
     
     public void deletePedido(Long id) {
         pedidoRepository.deleteById(id);
+    }
+
+    public List<PedidoResumenDTO> getPedidosResumen() {
+        return pedidoRepository.findAll().stream()
+            .map(p -> new PedidoResumenDTO(
+                p.getId(),
+                p.getFecha(),
+                p.getTotal(),
+                p.getCliente().getId(),
+                p.getProductos().stream().map(prod -> prod.getId()).toList()
+            ))
+            .toList();
     }
 }
