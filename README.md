@@ -32,3 +32,42 @@ El código está organizado siguiendo las mejores prácticas de separación de r
 2.  **Mantenimiento de Catálogo:** CRUD completo para productos y clientes.
 3.  **Integración de Clima:** Consumo de la API **Open-Meteo** para obtener datos climáticos en tiempo real de Santiago, Chile.
 4.  **Validación de Datos:** Uso de anotaciones para asegurar la integridad de la información recibida.
+
+---
+
+### Cómo se ejecuta
+
+Sigue estos pasos para levantar el proyecto en tu entorno local:
+
+#### 1. Requisitos Previos
+* Tener instalado **Java** (JDK 17 o superior).
+* Tener instalado **Visual Studio Code** con la extensión *Spring Boot Extension Pack y Extension Pack for Java*.
+* Tener instalado **Laragon** para levantar el entorno local de MySQL.
+* Tener **HeidiSQL** instalado para revisar las tablas de forma local.
+
+#### 2. Configurar la Base de Datos
+El proyecto está configurado para conectarse a una base de datos local y generar las tablas de forma automática gracias a Hibernate al iniciar la aplicación.
+
+1. Abre **Laragon** y haz clic en el botón **"Iniciar todo"** (Start All).
+2. Haz clic en el botón **"Base de datos"** (Database) en Laragon para abrir **HeidiSQL**.
+3. Conéctate a tu sesión de `localhost`, asegurándote de especificar el puerto **3307** (usuario `root` y sin contraseña).
+4. Crea una base de datos vacía llamada exactamente: `hungryshop_db`.
+5. El archivo `src/main/resources/application.properties` ya viene configurado para apuntar a este puerto de la siguiente manera:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3307/hungryshop_db
+   spring.datasource.username=root
+   spring.datasource.password=
+   spring.jpa.hibernate.ddl-auto=update
+
+
+---
+
+## 👨‍💻 Autor
+
+**Marcelo Muñoz**  
+Desarrollador Principal  
+GitHub: [@Mun-oz](https://github.com/Mun-oz)
+
+---
+
+📚 Proyecto académico desarrollado para la asignatura **Fullstack I** de Duoc UC.
