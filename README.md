@@ -35,7 +35,7 @@ El código está organizado siguiendo las mejores prácticas de separación de r
 
 ---
 
-### Cómo se ejecuta
+### 🚀 Cómo se ejecuta
 
 Sigue estos pasos para levantar el proyecto en tu entorno local:
 
