@@ -38,6 +38,6 @@ public class Producto {
     @Min(value = 0, message = "El stock no puede ser menor a cero")
     private Integer stock;
     
-    private boolean disponible; //Por defecto es false
+    private Boolean disponible; //Por defecto es false
     
 }   

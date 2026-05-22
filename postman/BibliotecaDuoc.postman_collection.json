@@ -1,8 +1,8 @@
 {
   "info": {
-    "_postman_id": "8f28b0c4-a9ed-4cc7-91c1-9f6ea6e1cf99",
-    "name": "HungryShop",
-    "description": "Colección de endpoints para el proyecto Hungry Shop - Fullstack I.",
+    "_postman_id": "9f28b0c4-a9ed-4cc7-91c1-9f6ea6e1cf00",
+    "name": "HungryShop API",
+    "description": "Colección corregida con los campos exactos de las entidades de Java.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -18,8 +18,7 @@
               "raw": "{{baseUrl}}/api/v1/clientes",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clientes"]
-            },
-            "description": "Retorna todos los clientes registrados."
+            }
           },
           "response": []
         },
@@ -32,8 +31,7 @@
               "raw": "{{baseUrl}}/api/v1/clientes/1",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clientes", "1"]
-            },
-            "description": "Busca un cliente específico por su ID."
+            }
           },
           "response": []
         },
@@ -44,14 +42,13 @@
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Marcelo\",\n  \"apellido\": \"Muñoz\",\n  \"correo\": \"marcelo@mail.com\"\n}"
+              "raw": "{\n  \"nombre\": \"Marcelo\",\n  \"apellido\": \"Muñoz\",\n  \"correo\": \"marcelo@mail.com\",\n  \"direccion\": \"Av. Vitacura 1234, Santiago\",\n  \"celular\": \"+56912345678\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/clientes",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clientes"]
-            },
-            "description": "Crea un cliente nuevo. Guarda el id que devuelva para usarlo en los pedidos."
+            }
           },
           "response": []
         },
@@ -62,14 +59,13 @@
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Marcelo\",\n  \"apellido\": \"Muñoz\",\n  \"correo\": \"marcelo.munoz@mail.com\"\n}"
+              "raw": "{\n  \"nombre\": \"Marcelo\",\n  \"apellido\": \"Muñoz Varas\",\n  \"correo\": \"marcelo.munoz@mail.com\",\n  \"direccion\": \"Pudahuel, Santiago\",\n  \"celular\": \"+56987654321\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/clientes/1",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clientes", "1"]
-            },
-            "description": "Actualiza la información de un cliente existente por su ID."
+            }
           },
           "response": []
         },
@@ -82,8 +78,7 @@
               "raw": "{{baseUrl}}/api/v1/clientes/1",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clientes", "1"]
-            },
-            "description": "Elimina un cliente del sistema por su ID."
+            }
           },
           "response": []
         }
@@ -101,8 +96,7 @@
               "raw": "{{baseUrl}}/api/v1/productos",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "productos"]
-            },
-            "description": "Retorna la lista completa de productos del menú."
+            }
           },
           "response": []
         },
@@ -115,8 +109,7 @@
               "raw": "{{baseUrl}}/api/v1/productos/1",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "productos", "1"]
-            },
-            "description": "Busca un producto por su ID."
+            }
           },
           "response": []
         },
@@ -127,14 +120,13 @@
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Hamburguesa Italiana\",\n  \"precio\": 5500.0,\n  \"descripcion\": \"Hamburguesa con palta, mayo y tomate\"\n}"
+              "raw": "{\n  \"nombre\": \"Hamburguesa Italiana\",\n  \"descripcion\": \"Hamburguesa con palta, mayo y tomate\",\n  \"precio\": 5500.0,\n  \"categoria\": \"Sandwiches\",\n  \"stock\": 50,\n  \"disponible\": true\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/productos",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "productos"]
-            },
-            "description": "Agrega un nuevo producto al menú."
+            }
           },
           "response": []
         },
@@ -145,14 +137,13 @@
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Hamburguesa Italiana Completa\",\n  \"precio\": 5990.0,\n  \"descripcion\": \"Hamburguesa con palta, mayo, tomate y agregado de papas fritas\"\n}"
+              "raw": "{\n  \"nombre\": \"Hamburguesa Italiana Grande\",\n  \"descripcion\": \"Hamburguesa doble con palta, mayo y tomate\",\n  \"precio\": 6990.0,\n  \"categoria\": \"Sandwiches\",\n  \"stock\": 30,\n  \"disponible\": true\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/productos/1",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "productos", "1"]
-            },
-            "description": "Actualiza el precio o descripción de un producto."
+            }
           },
           "response": []
         },
@@ -165,8 +156,7 @@
               "raw": "{{baseUrl}}/api/v1/productos/1",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "productos", "1"]
-            },
-            "description": "Elimina un producto del menú por ID."
+            }
           },
           "response": []
         }
@@ -184,8 +174,7 @@
               "raw": "{{baseUrl}}/api/v1/pedidos",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "pedidos"]
-            },
-            "description": "Retorna el historial completo de pedidos."
+            }
           },
           "response": []
         },
@@ -196,14 +185,13 @@
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"total\": 5500.0,\n  \"cliente\": {\n    \"id\": 1\n  },\n  \"productos\": [\n    { \"id\": 1 }\n  ]\n}"
+              "raw": "{\n  \"total\": 5500.0,\n  \"estado\": \"Pendiente\",\n  \"cliente\": {\n    \"id\": 1\n  },\n  \"productos\": [\n    { \"id\": 1 }\n  ]\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/pedidos",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "pedidos"]
-            },
-            "description": "Registra un pedido vinculando un clienteId y un arreglo de productosIds existentes."
+            }
           },
           "response": []
         },
@@ -216,8 +204,7 @@
               "raw": "{{baseUrl}}/api/v1/pedidos/resumen",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "pedidos", "resumen"]
-            },
-            "description": "Retorna la lista mapeada con la estructura simplificada de PedidoResumenDTO (IDs mapeados limpios)."
+            }
           },
           "response": []
         },
@@ -230,8 +217,7 @@
               "raw": "{{baseUrl}}/api/v1/pedidos/test-error",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "pedidos", "test-error"]
-            },
-            "description": "Endpoint de prueba que gatilla una excepción para validar el formateo del GlobalExceptionHandler de Hungry Shop."
+            }
           },
           "response": []
         }
@@ -249,8 +235,7 @@
               "raw": "{{baseUrl}}/api/v1/clima",
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clima"]
-            },
-            "description": "Consume la API de Open-Meteo vía WebClient usando las coordenadas por defecto de Santiago (-33.45, -70.65)."
+            }
           },
           "response": []
         },
@@ -264,19 +249,10 @@
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clima"],
               "query": [
-                {
-                  "key": "lat",
-                  "value": "-41.47",
-                  "description": "Latitud personalizada"
-                },
-                {
-                  "key": "lon",
-                  "value": "-72.94",
-                  "description": "Longitud personalizada"
-                }
+                { "key": "lat", "value": "-41.47" },
+                { "key": "lon", "value": "-72.94" }
               ]
-            },
-            "description": "Pasa parámetros dinámicos lat/lon al WebClient para consultar el clima de cualquier otra región."
+            }
           },
           "response": []
         }
