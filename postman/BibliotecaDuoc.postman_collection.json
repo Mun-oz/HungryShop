@@ -1,186 +1,223 @@
 {
   "info": {
-    "_postman_id": "4f18b0c4-a9ed-4cc7-91c1-9f6ea6e1cf18",
-    "name": "BibliotecaDuoc API",
-    "description": "Colección de endpoints para el proyecto bibliotecaduoc.",
+    "_postman_id": "8f28b0c4-a9ed-4cc7-91c1-9f6ea6e1cf99",
+    "name": "HungryShop",
+    "description": "Colección de endpoints para el proyecto Hungry Shop - Fullstack I.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Autores",
+      "name": "Clientes",
       "item": [
         {
-          "name": "Listar autores",
+          "name": "Listar clientes",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/autores",
+              "raw": "{{baseUrl}}/api/v1/clientes",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "autores"]
+              "path": ["api", "v1", "clientes"]
             },
-            "description": "Retorna todos los autores."
+            "description": "Retorna todos los clientes registrados."
           },
           "response": []
         },
         {
-          "name": "Buscar autor por ID",
+          "name": "Buscar cliente por ID",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/autores/1",
+              "raw": "{{baseUrl}}/api/v1/clientes/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "autores", "1"]
+              "path": ["api", "v1", "clientes", "1"]
             },
-            "description": "Busca un autor por id."
+            "description": "Busca un cliente específico por su ID."
           },
           "response": []
         },
         {
-          "name": "Crear autor",
+          "name": "Crear cliente",
           "request": {
             "method": "POST",
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Robert C. Martin\",\n  \"edad\": 73,\n  \"nacionalidad\": \"Estadounidense\"\n}"
+              "raw": "{\n  \"nombre\": \"Marcelo\",\n  \"apellido\": \"Muñoz\",\n  \"correo\": \"marcelo@mail.com\"\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/v1/autores",
+              "raw": "{{baseUrl}}/api/v1/clientes",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "autores"]
+              "path": ["api", "v1", "clientes"]
             },
-            "description": "Crea un autor nuevo. Guarda el id que devuelva para usarlo al crear un libro."
+            "description": "Crea un cliente nuevo. Guarda el id que devuelva para usarlo en los pedidos."
           },
           "response": []
         },
         {
-          "name": "Actualizar autor",
+          "name": "Actualizar cliente",
           "request": {
             "method": "PUT",
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Robert C. Martin\",\n  \"edad\": 74,\n  \"nacionalidad\": \"Estadounidense\"\n}"
+              "raw": "{\n  \"nombre\": \"Marcelo\",\n  \"apellido\": \"Muñoz\",\n  \"correo\": \"marcelo.munoz@mail.com\"\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/v1/autores/1",
+              "raw": "{{baseUrl}}/api/v1/clientes/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "autores", "1"]
+              "path": ["api", "v1", "clientes", "1"]
             },
-            "description": "Actualiza un autor existente por id."
+            "description": "Actualiza la información de un cliente existente por su ID."
           },
           "response": []
         },
         {
-          "name": "Eliminar autor",
+          "name": "Eliminar cliente",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/autores/1",
+              "raw": "{{baseUrl}}/api/v1/clientes/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "autores", "1"]
+              "path": ["api", "v1", "clientes", "1"]
             },
-            "description": "Elimina un autor por id."
+            "description": "Elimina un cliente del sistema por su ID."
           },
           "response": []
         }
       ]
     },
     {
-      "name": "Libros",
+      "name": "Productos",
       "item": [
         {
-          "name": "Listar libros",
+          "name": "Listar productos",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros",
+              "raw": "{{baseUrl}}/api/v1/productos",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros"]
+              "path": ["api", "v1", "productos"]
             },
-            "description": "Retorna todos los libros."
+            "description": "Retorna la lista completa de productos del menú."
           },
           "response": []
         },
         {
-          "name": "Buscar libro por ID",
+          "name": "Buscar producto por ID",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros/1",
+              "raw": "{{baseUrl}}/api/v1/productos/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros", "1"]
+              "path": ["api", "v1", "productos", "1"]
             },
-            "description": "Busca un libro por id."
+            "description": "Busca un producto por su ID."
           },
           "response": []
         },
         {
-          "name": "Crear libro",
+          "name": "Crear producto",
           "request": {
             "method": "POST",
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"isbn\": \"9780132350884\",\n  \"titulo\": \"Clean Code\",\n  \"editorial\": \"Prentice Hall\",\n  \"fechaPublicacion\": 2008,\n  \"autor\": {\n    \"id\": 1\n  }\n}"
+              "raw": "{\n  \"nombre\": \"Hamburguesa Italiana\",\n  \"precio\": 5500.0,\n  \"descripcion\": \"Hamburguesa con palta, mayo y tomate\"\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros",
+              "raw": "{{baseUrl}}/api/v1/productos",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros"]
+              "path": ["api", "v1", "productos"]
             },
-            "description": "Crea un libro nuevo. El campo autor.id debe corresponder a un autor existente."
+            "description": "Agrega un nuevo producto al menú."
           },
           "response": []
         },
         {
-          "name": "Actualizar libro",
+          "name": "Actualizar producto",
           "request": {
             "method": "PUT",
             "header": [{"key": "Content-Type", "value": "application/json"}],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"isbn\": \"9780132350884\",\n  \"titulo\": \"Clean Code (Edicion actualizada)\",\n  \"editorial\": \"Prentice Hall\",\n  \"fechaPublicacion\": 2009,\n  \"autor\": {\n    \"id\": 1\n  }\n}"
+              "raw": "{\n  \"nombre\": \"Hamburguesa Italiana Completa\",\n  \"precio\": 5990.0,\n  \"descripcion\": \"Hamburguesa con palta, mayo, tomate y agregado de papas fritas\"\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros/1",
+              "raw": "{{baseUrl}}/api/v1/productos/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros", "1"]
+              "path": ["api", "v1", "productos", "1"]
             },
-            "description": "Actualiza un libro existente por id."
+            "description": "Actualiza el precio o descripción de un producto."
           },
           "response": []
         },
         {
-          "name": "Eliminar libro",
+          "name": "Eliminar producto",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros/1",
+              "raw": "{{baseUrl}}/api/v1/productos/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros", "1"]
+              "path": ["api", "v1", "productos", "1"]
             },
-            "description": "Elimina un libro por id."
+            "description": "Elimina un producto del menú por ID."
           },
           "response": []
-        },
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
         {
-          "name": "Libros con nacionalidad del autor (DTO)",
+          "name": "Listar todos los pedidos",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros/con-nacionalidad",
+              "raw": "{{baseUrl}}/api/v1/pedidos",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros", "con-nacionalidad"]
+              "path": ["api", "v1", "pedidos"]
             },
-            "description": "Retorna una lista proyectada con solo el título del libro y la nacionalidad de su autor (LibroNacionalidadDTO). Ejemplo de respuesta:\n[\n  { \"titulo\": \"Cien años de soledad\", \"nacionalidadAutor\": \"Colombiana\" },\n  { \"titulo\": \"La casa de los espíritus\", \"nacionalidadAutor\": \"Chilena\" }\n]"
+            "description": "Retorna el historial completo de pedidos."
+          },
+          "response": []
+        },
+        {
+          "name": "Crear pedido",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"total\": 5500.0,\n  \"cliente\": {\n    \"id\": 1\n  },\n  \"productos\": [\n    { \"id\": 1 }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/pedidos",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "pedidos"]
+            },
+            "description": "Registra un pedido vinculando un clienteId y un arreglo de productosIds existentes."
+          },
+          "response": []
+        },
+        {
+          "name": "Pedidos con Resumen Simplificado (DTO)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/pedidos/resumen",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "pedidos", "resumen"]
+            },
+            "description": "Retorna la lista mapeada con la estructura simplificada de PedidoResumenDTO (IDs mapeados limpios)."
           },
           "response": []
         },
@@ -190,11 +227,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/v1/libros/test-error",
+              "raw": "{{baseUrl}}/api/v1/pedidos/test-error",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "libros", "test-error"]
+              "path": ["api", "v1", "pedidos", "test-error"]
             },
-            "description": "Endpoint de prueba que lanza una RuntimeException a propósito. Demuestra cómo el GlobalExceptionHandler intercepta el error y devuelve un JSON estructurado con código 500:\n{\n  \"codigo\": 500,\n  \"mensaje\": \"Error interno del servidor\",\n  \"detalle\": \"Este es un error de prueba lanzado intencionalmente\"\n}"
+            "description": "Endpoint de prueba que gatilla una excepción para validar el formateo del GlobalExceptionHandler de Hungry Shop."
           },
           "response": []
         }
@@ -204,7 +241,7 @@
       "name": "Clima (Open-Meteo)",
       "item": [
         {
-          "name": "Clima actual - Santiago (default)",
+          "name": "Clima actual - Santiago (Default)",
           "request": {
             "method": "GET",
             "header": [],
@@ -213,12 +250,12 @@
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "clima"]
             },
-            "description": "Devuelve el clima actual de Santiago de Chile usando la API Open-Meteo (lat=-33.45, lon=-70.65).\n\nEjemplo de respuesta:\n{\n  \"latitude\": -33.45,\n  \"longitude\": -70.65,\n  \"current_weather\": {\n    \"temperature\": 14.5,\n    \"windspeed\": 22.3,\n    \"winddirection\": 180,\n    \"weathercode\": 3,\n    \"is_day\": 1,\n    \"time\": \"2024-01-15T12:00\"\n  }\n}"
+            "description": "Consume la API de Open-Meteo vía WebClient usando las coordenadas por defecto de Santiago (-33.45, -70.65)."
           },
           "response": []
         },
         {
-          "name": "Clima actual - coordenadas personalizadas",
+          "name": "Clima actual - Coordenadas personalizadas",
           "request": {
             "method": "GET",
             "header": [],
@@ -230,16 +267,16 @@
                 {
                   "key": "lat",
                   "value": "-41.47",
-                  "description": "Latitud (ej: -41.47 para Puerto Montt)"
+                  "description": "Latitud personalizada"
                 },
                 {
                   "key": "lon",
                   "value": "-72.94",
-                  "description": "Longitud (ej: -72.94 para Puerto Montt)"
+                  "description": "Longitud personalizada"
                 }
               ]
             },
-            "description": "Devuelve el clima actual para coordenadas personalizadas. Este ejemplo usa Puerto Montt. Puedes cambiar lat y lon por cualquier ciudad del mundo."
+            "description": "Pasa parámetros dinámicos lat/lon al WebClient para consultar el clima de cualquier otra región."
           },
           "response": []
         }
