@@ -3,7 +3,6 @@
 **HungryShop** es una solución de backend desarrollada para la gestión integral de una tienda de comida. Este proyecto fue creado como parte del curso **Fullstack I**, enfocándose en la implementación de una arquitectura limpia y escalable utilizando el ecosistema de Spring.
 
 ---
-
 ## 🛠️ Tecnologías y Herramientas
 * **Lenguaje:** Java 17.
 * **Framework:** Spring Boot 3.x.
@@ -40,10 +39,10 @@ El código está organizado siguiendo las mejores prácticas de separación de r
 Sigue estos pasos para levantar el proyecto en tu entorno local:
 
 #### 1. Requisitos Previos
-* Tener instalado **Java** (JDK 17 o superior).
-* Tener instalado **Visual Studio Code** con la extensión *Spring Boot Extension Pack y Extension Pack for Java*.
-* Tener instalado **Laragon** para levantar el entorno local de MySQL.
-* Tener **HeidiSQL** instalado para revisar las tablas de forma local.
+* **Java Development Kit (JDK):** Versión 17 o superior instalada.
+* **Visual Studio Code:** Configurado con *Spring Boot Extension Pack* y *Extension Pack for Java*.
+* **Laragon:** Entorno local activo para MySQL.
+* **HeidiSQL** Revisar las tablas de forma local.
 
 #### 2. Configurar la Base de Datos
 El proyecto está configurado para conectarse a una base de datos local y generar las tablas de forma automática gracias a Hibernate al iniciar la aplicación.
@@ -59,15 +58,22 @@ El proyecto está configurado para conectarse a una base de datos local y genera
    spring.datasource.password=
    spring.jpa.hibernate.ddl-auto=update
 
+#### 3. Compilar y Ejecutar la Aplicación
+
+1. Clonar este repositorio.
+2. Abrir la carpeta raiz en su IDE (Se recomienda Visual Studio Code)
+3. Desplegar la terminal y ejecute el siguiente comando para levantar el servidor
+   ```
+   ./mvnw spring-boot:run
+4. El servidor se iniciará exitosamente en el puerto predeterminado:
+   ```HTTP
+   http://localhost:8080
 
 ---
 
 ## 👨‍💻 Autor
 
 **Marcelo Muñoz**  
-Desarrollador Principal  
-GitHub: [@Mun-oz](https://github.com/Mun-oz)
 
----
+   
 
-📚 Proyecto académico desarrollado para la asignatura **Fullstack I** de Duoc UC.
