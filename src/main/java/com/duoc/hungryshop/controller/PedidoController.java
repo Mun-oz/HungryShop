@@ -18,33 +18,38 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
 
-    // Listar todos como Entidades (Igual al estilo del profe)
+    // Listar todos como Entidades 
     @GetMapping
     public ResponseEntity<List<Pedido>> listarPedidos() {
+        System.out.println("[PedidoController] -> listarPedidos");
         return ResponseEntity.ok(pedidoService.getPedidos());
     }
 
-    // Buscar uno solo (Devuelve la Entidad completa)
+    // Buscar uno solo 
     @GetMapping("/{id}")
     public ResponseEntity<Pedido> buscarPedido(@PathVariable Long id) {
+        System.out.println("[PedidoController] -> buscarPedido id=" + id);
         Pedido pedido = pedidoService.getPedidoId(id);
         return pedido != null ? ResponseEntity.ok(pedido) : ResponseEntity.notFound().build();
     }
 
-    // Agregar pedido (Recibe la Entidad Pedido)
+    // Agregar pedido
     @PostMapping
     public ResponseEntity<Pedido> agregarPedido(@Valid @RequestBody Pedido pedido) {
+        System.out.println("[PedidoController] -> agregarPedido");
         return ResponseEntity.status(HttpStatus.CREATED).body(pedidoService.savePedido(pedido));
     }
 
-    // EL MÉTODO ESPECIAL: Obtener el resumen usando TU DTO
+    // Obtener el resumen usando DTO
     @GetMapping("/resumen")
     public ResponseEntity<List<PedidoResumenDTO>> listarResumen() {
+        System.out.println("[PedidoController] -> listarResumen (DTO)");
         return ResponseEntity.ok(pedidoService.getPedidosResumen());
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarPedido(@PathVariable Long id) {
+        System.out.println("[PedidoController] -> eliminarPedido id=" + id);
         pedidoService.deletePedido(id);
         return ResponseEntity.noContent().build();
     }

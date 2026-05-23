@@ -19,16 +19,19 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<List<Cliente>> listarClientes() {
+        System.out.println("[ClienteController] -> listarClientes");
         return ResponseEntity.ok(clienteService.getClientes());
     }
 
     @PostMapping
     public ResponseEntity<Cliente> agregarCliente(@Valid @RequestBody Cliente cliente) {
+        System.out.println("[ClienteController] -> agregarCliente");
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.saveCliente(cliente));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> buscarCliente(@PathVariable Long id) {
+        System.out.println("[ClienteController] -> buscarCliente id=" + id);
         Cliente cliente = clienteService.getClienteId(id);
         if (cliente == null) {
             return ResponseEntity.notFound().build();
@@ -38,6 +41,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Cliente> actualizarCliente(@PathVariable Long id, @Valid @RequestBody Cliente cliente) {
+        System.out.println("[ClienteController] -> actualizarCliente id=" + id);
         cliente.setId(id);
         Cliente actualizado = clienteService.updateCliente(cliente);
         if (actualizado == null) {
@@ -48,6 +52,7 @@ public class ClienteController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarCliente(@PathVariable Long id) {
+        System.out.println("[ClienteController] -> eliminarCliente id=" + id);
         clienteService.deleteCliente(id);
         return ResponseEntity.noContent().build();
     }
