@@ -18,16 +18,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class PedidoControllerTest { // 2. Renombramos la clase de prueba
+class PedidoControllerTest { 
 
     @Mock
-    private PedidoService pedidoService; // 3. Simulamos tu servicio de pedidos
+    private PedidoService pedidoService; 
 
     @InjectMocks
-    private PedidoController pedidoController; // 4. Inyectamos el mock en tu controlador
+    private PedidoController pedidoController; 
 
     @Test
-    void crearPedido_retorna201_cuandoExisteCliente() { // 5. Nombre descriptivo del test
+    void crearPedido_retorna201_cuandoExisteCliente() {
 
         // Vamos a verificar que el método agregarPedido del controlador funciona correctamente.
         // Para ello crearemos un pedido con un cliente válido y simularemos el comportamiento del servicio.
