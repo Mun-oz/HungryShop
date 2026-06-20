@@ -70,4 +70,29 @@ class PedidoControllerTest {
         assertEquals("Pendiente", body.getEstado());
         assertEquals(5500.0, body.getTotal());
     }
+
+    @Test
+    void crearPedido_retorna201_conEstadoEntregado() {
+        // 1. Configuramos un pedido ya completado
+        Cliente cliente = new Cliente();
+        cliente.setId(1L);
+
+        Pedido pedidoEntregado = new Pedido();
+        pedidoEntregado.setId(4L);
+        pedidoEntregado.setTotal(15000.0);
+        pedidoEntregado.setEstado("Entregado"); // Estado distinto
+        pedidoEntregado.setCliente(cliente);
+        pedidoEntregado.setProductos(new ArrayList<>());
+
+        // 2. Simulamos el servicio
+        when(pedidoService.savePedido(pedidoEntregado)).thenReturn(pedidoEntregado);
+
+        // 3. Ejecutamos el controlador
+        ResponseEntity<Pedido> respuesta = pedidoController.agregarPedido(pedidoEntregado);
+
+        // 4. Verificaciones
+        assertNotNull(respuesta);
+        assertEquals(HttpStatus.CREATED, respuesta.getStatusCode());
+        assertEquals("Entregado", respuesta.getBody().getEstado());
+    }
 }
