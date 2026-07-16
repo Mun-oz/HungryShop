@@ -507,7 +507,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:8080"
+      "value": "https://hungryshop-production-51fe.up.railway.app"
     },
     {
       "key": "token",
